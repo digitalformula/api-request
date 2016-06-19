@@ -84,7 +84,7 @@ class ApiRequest
 
 		$credentials = base64_encode( $this->username . ':' . $this->password );
 
-		$this->client = new GuzzleHttp\Client( [
+		$this->client = new \GuzzleHttp\Client( [
 			'base_url' => sprintf( "https://%s:%s%s",
 				$this->cvmAddress,
 				$this->cvmPort,
