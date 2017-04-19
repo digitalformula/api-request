@@ -141,15 +141,15 @@ class ApiRequest
      * @param $body
      * @return \GuzzleHttp\Message\FutureResponse|\GuzzleHttp\Message\ResponseInterface|\GuzzleHttp\Ring\Future\FutureInterface|null
      */
-    public function post( $requestPath, $body, $encode = true )
+    public function post( $endPoint, $body, $encode = true )
     {
-        if( $encode ) {
-            return $this->client->post( $requestPath, [ 'body' => json_encode( $body ) ] );
-        }
-        else {
-            return $this->client->post( $requestPath, [ 'body' => $body ] );
-        }
-
+    	if( $encode ) {
+    		return $this->client->post( $this->requestPath . '/' . $endPoint, [ 'body' => json_encode( $body ) ] );
+    	}
+    	else {
+    		return $this->client->post( $this->requestPath . '/' . $endPoint, [ 'body' => $body ] );
+    	}
+    	
     }
 
 }
