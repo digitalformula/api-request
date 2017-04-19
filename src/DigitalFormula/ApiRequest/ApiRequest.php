@@ -129,9 +129,9 @@ class ApiRequest
      * @param $requestPath
      * @return \GuzzleHttp\Message\FutureResponse|\GuzzleHttp\Message\ResponseInterface|\GuzzleHttp\Ring\Future\FutureInterface|null
      */
-    public function get( $requestPath )
+    public function get( $endPoint = null )
     {
-        return $this->client->get( $requestPath );
+    	return $this->client->get( $this->requestPath . '/' . $endPoint );
     }
 
     /**
