@@ -10,7 +10,7 @@
  *
  */
 
-namespace DigitalFormula;
+namespace DigitalFormula\API;
 
 use GuzzleHttp\Client;
 
